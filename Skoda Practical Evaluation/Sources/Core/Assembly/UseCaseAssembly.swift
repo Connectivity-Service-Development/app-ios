@@ -12,7 +12,7 @@ class UseCaseAssembly: Assembly {
     
     func assemble(container: Container) {
         container.register(GetDummyUseCase.self) { resolver in
-            GetDummyUseCaseImpl(repository: resolver.resolve(DummyRepository.self)!)
+            GetDummyUseCaseImpl(dataSource: inject())
         }
     }
 }

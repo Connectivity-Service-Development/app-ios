@@ -13,7 +13,6 @@ fileprivate let assembler: Assembler = {
             
     return Assembler([
         dataSourceAssembly(),
-        RepositoryAssembly(),
         UseCaseAssembly(),
     ], container: container)
 }()
@@ -36,4 +35,8 @@ func inject<Service, Arg1>(_ serviceType: Service.Type, argument: Arg1) -> Servi
 
 func inject<Service, Arg1, Arg2>(_ serviceType: Service.Type, arguments argument1: Arg1, _ argument2: Arg2) -> Service {
     assembler.resolver.resolve(serviceType, arguments: argument1, argument2)!
+}
+
+public func inject<T>() -> T {
+    assembler.resolver.resolve(T.self)!
 }

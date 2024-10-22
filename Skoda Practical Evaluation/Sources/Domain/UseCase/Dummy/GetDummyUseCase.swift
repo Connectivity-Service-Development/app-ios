@@ -15,11 +15,12 @@ protocol GetDummyUseCase {
 
 
 struct GetDummyUseCaseImpl: GetDummyUseCase {
-    let repository: DummyRepository
+    
+    let dataSource: DummyDataSource
     
     func callAsFunction() async -> Result<Dummy, Error> {
         do {
-            return .success(try await repository.getDummy())
+            return .success(try await dataSource.getDummy())
         } catch {
             return .failure(error)
         }
