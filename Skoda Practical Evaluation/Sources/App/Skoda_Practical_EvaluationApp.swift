@@ -7,11 +7,12 @@
 
 import SwiftUI
 
+
 @main
 struct Skoda_Practical_EvaluationApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DummyView()
         }
     }
 }

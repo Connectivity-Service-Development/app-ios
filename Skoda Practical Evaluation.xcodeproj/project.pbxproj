@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7690AE2F2CC78DAD00E83051 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 7690AE2E2CC78DAD00E83051 /* Swinject */; };
-		7690AE312CC78DAD00E83051 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7690AE302CC78DAD00E83051 /* Swinject-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,11 +31,26 @@
 		7690ADF12CC78ADB00E83051 /* Skoda Practical Evaluation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Skoda Practical Evaluation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7690AE012CC78ADD00E83051 /* Skoda Practical EvaluationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Skoda Practical EvaluationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7690AE0B2CC78ADD00E83051 /* Skoda Practical EvaluationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Skoda Practical EvaluationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7690AE882CC7A91900E83051 /* Skoda-Practical-Evaluation-Mock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Skoda-Practical-Evaluation-Mock-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		7690AE862CC7A82100E83051 /* Exceptions for "Skoda Practical Evaluation" folder in "Skoda Practical Evaluation" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Skoda-Practical-Evaluation-Info.plist",
+				Sources/App/Configuration/Mock.xcconfig,
+			);
+			target = 7690ADF02CC78ADB00E83051 /* Skoda Practical Evaluation */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		7690ADF32CC78ADB00E83051 /* Skoda Practical Evaluation */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				7690AE862CC7A82100E83051 /* Exceptions for "Skoda Practical Evaluation" folder in "Skoda Practical Evaluation" target */,
+			);
 			path = "Skoda Practical Evaluation";
 			sourceTree = "<group>";
 		};
@@ -58,7 +72,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7690AE2F2CC78DAD00E83051 /* Swinject in Frameworks */,
-				7690AE312CC78DAD00E83051 /* Swinject-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +95,7 @@
 		7690ADE82CC78ADB00E83051 = {
 			isa = PBXGroup;
 			children = (
+				7690AE882CC7A91900E83051 /* Skoda-Practical-Evaluation-Mock-Info.plist */,
 				7690ADF32CC78ADB00E83051 /* Skoda Practical Evaluation */,
 				7690AE042CC78ADD00E83051 /* Skoda Practical EvaluationTests */,
 				7690AE0E2CC78ADD00E83051 /* Skoda Practical EvaluationUITests */,
@@ -120,7 +134,6 @@
 			name = "Skoda Practical Evaluation";
 			packageProductDependencies = (
 				7690AE2E2CC78DAD00E83051 /* Swinject */,
-				7690AE302CC78DAD00E83051 /* Swinject-Dynamic */,
 			);
 			productName = "Skoda Practical Evaluation";
 			productReference = 7690ADF12CC78ADB00E83051 /* Skoda Practical Evaluation.app */;
@@ -402,6 +415,8 @@
 		};
 		7690AE162CC78ADD00E83051 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 7690ADF32CC78ADB00E83051 /* Skoda Practical Evaluation */;
+			baseConfigurationReferenceRelativePath = Sources/App/Configuration/Mock.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -411,6 +426,7 @@
 				DEVELOPMENT_TEAM = A48TL7758R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Skoda-Practical-Evaluation-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -440,6 +456,7 @@
 				DEVELOPMENT_TEAM = A48TL7758R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Skoda-Practical-Evaluation-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -587,11 +604,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7690AE2D2CC78DAD00E83051 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
-		};
-		7690AE302CC78DAD00E83051 /* Swinject-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7690AE2D2CC78DAD00E83051 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = "Swinject-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
