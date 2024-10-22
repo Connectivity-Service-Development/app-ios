@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7690AE2F2CC78DAD00E83051 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 7690AE2E2CC78DAD00E83051 /* Swinject */; };
+		7690AE312CC78DAD00E83051 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7690AE302CC78DAD00E83051 /* Swinject-Dynamic */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		7690AE022CC78ADD00E83051 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7690AE2F2CC78DAD00E83051 /* Swinject in Frameworks */,
+				7690AE312CC78DAD00E83051 /* Swinject-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +119,8 @@
 			);
 			name = "Skoda Practical Evaluation";
 			packageProductDependencies = (
+				7690AE2E2CC78DAD00E83051 /* Swinject */,
+				7690AE302CC78DAD00E83051 /* Swinject-Dynamic */,
 			);
 			productName = "Skoda Practical Evaluation";
 			productReference = 7690ADF12CC78ADB00E83051 /* Skoda Practical Evaluation.app */;
@@ -195,6 +204,9 @@
 			);
 			mainGroup = 7690ADE82CC78ADB00E83051;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7690AE2D2CC78DAD00E83051 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7690ADF22CC78ADB00E83051 /* Products */;
 			projectDirPath = "";
@@ -558,6 +570,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7690AE2D2CC78DAD00E83051 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7690AE2E2CC78DAD00E83051 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7690AE2D2CC78DAD00E83051 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		7690AE302CC78DAD00E83051 /* Swinject-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7690AE2D2CC78DAD00E83051 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = "Swinject-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7690ADE92CC78ADB00E83051 /* Project object */;
 }
