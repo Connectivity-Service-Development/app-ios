@@ -10,11 +10,11 @@ import SwiftUI
 
 struct LoadingView: View {
     var body: some View {
-        Color.black
+        Color.white
             .opacity(0.1)
             .overlay(
                 ProgressView()
-                    .progressViewStyle(.circular)
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
             )
             .ignoresSafeArea()
     }

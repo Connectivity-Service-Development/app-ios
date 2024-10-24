@@ -4,5 +4,12 @@
 <dict>
 	<key>ENVIRONMENT</key>
 	<string>$(ENVIRONMENT)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SKODANext-Black.ttf</string>
+		<string>SKODANext-Regular.ttf</string>
+		<string>SKODANext-BlackExpanded.ttf</string>
+		<string>SKODANext-Bold.ttf</string>
+	</array>
 </dict>
 </plist>

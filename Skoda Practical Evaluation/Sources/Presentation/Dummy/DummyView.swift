@@ -7,9 +7,15 @@
 
 import SwiftUI
 
+
 struct DummyView: View {
     
+    // MARK: - State
+    
     @StateObject private var viewModel = ViewModel()
+    
+    
+    // MARK: - Body
     
     var body: some View {
         LoadableView(
@@ -27,6 +33,7 @@ struct DummyView: View {
         }
     }
 }
+
 
 #Preview {
     DummyView()

@@ -1,5 +1,5 @@
 //
-//  DataSourceAssembly.swift
+//  MockDataSourceAssembly.swift
 //  Skoda Practical Evaluation
 //
 //  Created by Daniel Gabzdyl on 22.10.2024.
@@ -13,6 +13,10 @@ class MockDataSourceAssembly: Assembly {
     func assemble(container: Container) {
         container.register(DummyDataSource.self) { _ in
             DummyDataSourceMock()
+        }
+        
+        container.register(PrepaidServicesDataSource.self) { _ in
+            PrepaidServicesDataSourceMock()
         }
     }
 }
