@@ -14,8 +14,20 @@ extension Color {
         .init(red: 22 / 255, green: 23 / 255, blue: 24 / 255)
     }
     
+    static var skodaButtonBackground: Color {
+        .init(red: 35 / 255, green: 36 / 255, blue: 37 / 255)
+    }
+    
     static var skodaLightGray: Color {
         .init(red: 48 / 255, green: 49 / 255, blue: 50 / 255)
+    }
+    
+    static var skodaLighterGray: Color {
+        .init(red: 218 / 255, green: 218 / 255, blue: 218 / 255)
+    }
+    
+    static var skodaActiveGreen: Color {
+        .init(red: 125 / 255, green: 224 / 255, blue: 91 / 255)
     }
     
     static var skodaGreen: Color {
@@ -24,6 +36,10 @@ extension Color {
     
     static var skodaOrange: Color {
         .init(red: 252 / 255, green: 154 / 255, blue: 94 / 255)
+    }
+    
+    static var skodaRed: Color {
+        .init(red: 212 / 255, green: 86 / 255, blue: 76 / 255)
     }
     
     static var skodaGrayText: Color {

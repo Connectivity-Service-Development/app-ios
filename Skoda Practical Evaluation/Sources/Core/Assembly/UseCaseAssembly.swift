@@ -18,5 +18,17 @@ class UseCaseAssembly: Assembly {
         container.register(GetMyPrepaidServicesUseCase.self) { resolver in
             GetMyPrepaidServicesUseCaseImpl(dataSource: inject())
         }
+        
+        container.register(GetAllPrepaidServicesUseCase.self) { resolver in
+            GetAllPrepaidServicesUseCaseImpl(dataSource: inject())
+        }
+        
+        container.register(ResetUseCase.self) { resolver in
+            ResetUseCaseImpl(dataSource: inject())
+        }
+        
+        container.register(OrderPrepaidServiceUseCase.self) { resolver in
+            OrderPrepaidServiceUseCaseImpl(dataSource: inject())
+        }
     }
 }

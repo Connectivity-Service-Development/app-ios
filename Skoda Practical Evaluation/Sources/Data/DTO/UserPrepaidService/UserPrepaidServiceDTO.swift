@@ -8,8 +8,13 @@
 import Foundation
 
 
+enum DateConversionError: Error {
+    case invalidDateFormat
+}
+
+
 struct UserPrepaidServiceDTO: Decodable {
-    let id: Int
+    let prepaidServiceId: String
     let serviceName: String
     let expirationDate: String
     let expired: Bool
@@ -20,10 +25,19 @@ struct UserPrepaidServiceDTO: Decodable {
 
 extension UserPrepaidServiceDTO {
     func toEntity() throws -> UserPrepaidService {
-        return .init(
-            id: id,
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        guard let date = dateFormatter.date(from: expirationDate) else {
+            throw DateConversionError.invalidDateFormat
+        }
+        
+        return UserPrepaidService(
+            id: prepaidServiceId,
             serviceName: serviceName,
-            expirationDate: try Date(expirationDate, strategy: .dateTime.year().month().day()),
+            expirationDate: date,
             expired: expired
         )
     }

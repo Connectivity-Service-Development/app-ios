@@ -15,18 +15,20 @@ extension HomeView {
         // MARK: - UseCases
         
         private let getMyPrepaidServicesUseCase = inject(GetMyPrepaidServicesUseCase.self)
+        private let getAllPrepaidServicesUseCase = inject(GetAllPrepaidServicesUseCase.self)
         
         
         // MARK: - Properties
         
-        @Published var prepaidServices: [UserPrepaidService]?
+        @Published var prepaidServices: [PrepaidService]?
+        @Published var myPrepaidServices: [UserPrepaidService]?
         @Published var hideExpirationReminderBanner = false
         
         
         // MARK: - Computed properties
         
         var hasServiceExpiringInLessThanAMonth: Bool {
-            guard let prepaidServices else {
+            guard let myPrepaidServices else {
                 return false
             }
             
@@ -34,15 +36,19 @@ extension HomeView {
                 return false
             }
             
-            return prepaidServices.contains { $0.expirationDate < oneMonthFromNow }
+            return myPrepaidServices.contains { $0.expirationDate < oneMonthFromNow && !$0.expired && $0.expirationDate > Date() }
         }
         
-        var prepaidServicesCount: Int {
+        var allPrepareidServicesCount: Int {
             prepaidServices?.count ?? 0
         }
         
+        var myPrepaidServicesCount: Int {
+            myPrepaidServices?.filter({ !$0.expired }).count ?? 0
+        }
+        
         var serviceExpiringInLessThanAMonthCount: Int {
-            guard let prepaidServices else {
+            guard let myPrepaidServices else {
                 return 0
             }
             
@@ -50,7 +56,7 @@ extension HomeView {
                 return 0
             }
             
-            return prepaidServices.filter { $0.expirationDate < oneMonthFromNow }.count
+            return myPrepaidServices.filter { $0.expirationDate < oneMonthFromNow && !$0.expired && $0.expirationDate > Date() }.count
         }
         
         
@@ -58,6 +64,19 @@ extension HomeView {
         
         func fetchMyPrepaidServices() async {
             let prepaidServices = await getMyPrepaidServicesUseCase()
+            
+            switch prepaidServices {
+            case .success(let prepaidServices):
+                await MainActor.run {
+                    self.myPrepaidServices = prepaidServices
+                }
+            default:
+                break
+            }
+        }
+        
+        func fetchAllPrepaidServices() async {
+            let prepaidServices = await getAllPrepaidServicesUseCase()
             
             switch prepaidServices {
             case .success(let prepaidServices):

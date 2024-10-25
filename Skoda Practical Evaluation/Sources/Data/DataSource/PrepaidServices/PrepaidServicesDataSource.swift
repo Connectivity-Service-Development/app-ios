@@ -10,4 +10,6 @@ import Foundation
 
 protocol PrepaidServicesDataSource {
     func getMyPrepaidServices() async throws -> [UserPrepaidService]
+    func getAllPrepaidServices() async throws -> [PrepaidService]
+    func orderPrepaidService(id: String) async throws -> Void
 }

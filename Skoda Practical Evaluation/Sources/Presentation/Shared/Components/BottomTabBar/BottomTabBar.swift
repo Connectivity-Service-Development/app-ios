@@ -50,6 +50,7 @@ struct BottomTabBar: View {
             VStack {
                 Color.skodaSeparator
                     .frame(height: 1)
+                    .clipShape(RoundedRectangle(cornerRadius: 1, style: .circular))
                 
                 GeometryReader { proxy in
                     ForEach(Array(tabs.enumerated()), id: \.offset) { index, tab in

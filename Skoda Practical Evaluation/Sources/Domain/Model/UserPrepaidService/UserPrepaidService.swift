@@ -9,7 +9,7 @@ import Foundation
 
 
 struct UserPrepaidService {
-    let id: Int
+    let id: String
     let serviceName: String
     let expirationDate: Date
     let expired: Bool

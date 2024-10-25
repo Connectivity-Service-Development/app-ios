@@ -17,56 +17,59 @@ struct DashboardView: View {
             case .home:
                 HomeView(selectedTab: $selectedTab)
             case .maps:
-                LoadableView(
-                    isLoading: .constant(false),
-                    error: .constant(nil)
-                ) {
-                    ScrollView {
-                        
+                NavigationStack {
+                    LoadableView(
+                        isLoading: .constant(false),
+                        error: .constant(nil)
+                    ) {
+                        ScrollView {
+                            
+                        }
+                        .padding(.bottom, 64)
+                        .background(Color.skodaBackground)
                     }
-                    .padding(.bottom, 64)
-                    .background(Color.skodaBackground)
+                    .overlay(
+                        VStack {
+                            Spacer()
+                            BottomTabBar(selectedItem: $selectedTab)
+                        }
+                    )
+                    .toolbar {
+                        ToolbarItem(placement: .principal) {
+                            Text("dashboard_tab_maps")
+                                .font(.bold(size: 20))
+                                .foregroundColor(.white)
+                        }
+                    }
                 }
-                .overlay(
-                    VStack {
-                        Spacer()
-                        BottomTabBar(selectedItem: $selectedTab)
-                    }
-                )
             case .inspection:
-                LoadableView(
-                    isLoading: .constant(false),
-                    error: .constant(nil)
-                ) {
-                    ScrollView {
-                        
+                NavigationStack {
+                    LoadableView(
+                        isLoading: .constant(false),
+                        error: .constant(nil)
+                    ) {
+                        ScrollView {
+                            
+                        }
+                        .padding(.bottom, 64)
+                        .background(Color.skodaBackground)
                     }
-                    .padding(.bottom, 64)
-                    .background(Color.skodaBackground)
+                    .overlay(
+                        VStack {
+                            Spacer()
+                            BottomTabBar(selectedItem: $selectedTab)
+                        }
+                    )
+                    .toolbar {
+                        ToolbarItem(placement: .principal) {
+                            Text("dashboard_tab_inspection")
+                                .font(.bold(size: 20))
+                                .foregroundColor(.white)
+                        }
+                    }
                 }
-                .overlay(
-                    VStack {
-                        Spacer()
-                        BottomTabBar(selectedItem: $selectedTab)
-                    }
-                )
             case .settings:
-                LoadableView(
-                    isLoading: .constant(false),
-                    error: .constant(nil)
-                ) {
-                    ScrollView {
-                        
-                    }
-                    .padding(.bottom, 64)
-                    .background(Color.skodaBackground)
-                }
-                .overlay(
-                    VStack {
-                        Spacer()
-                        BottomTabBar(selectedItem: $selectedTab)
-                    }
-                )
+                SettingsView(selectedTab: $selectedTab)
             }
         }
     }

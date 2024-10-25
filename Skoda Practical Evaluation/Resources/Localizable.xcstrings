@@ -4,10 +4,35 @@
     "" : {
 
     },
+    " %@" : {
+
+    },
+    " CZK" : {
+
+    },
+    "!" : {
+
+    },
     "%lld" : {
 
     },
-    "%lld of TBD active" : {
+    "%lld of %lld active" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld of %2$lld active"
+          }
+        }
+      }
+    },
+    ">" : {
+
+    },
+    "5 CZK" : {
+
+    },
+    "8 CZK" : {
 
     },
     "20 % / 60 km" : {
@@ -15,6 +40,46 @@
     },
     "24 °C" : {
 
+    },
+    "active" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Active"
+          }
+        }
+      }
+    },
+    "annual" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annual"
+          }
+        }
+      }
+    },
+    "apple_pay" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pay"
+          }
+        }
+      }
+    },
+    "beginning_of_validity" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beginning of Validity"
+          }
+        }
+      }
     },
     "common_error" : {
       "localizations" : {
@@ -31,7 +96,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Browse"
+            "value" : "Extend Access"
           }
         }
       }
@@ -41,7 +106,17 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Remind me"
+            "value" : "Remind"
+          }
+        }
+      }
+    },
+    "connected_services_expiration_reminders_subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please check the validity of your licenses."
           }
         }
       }
@@ -51,7 +126,17 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Some of your prepaid services will soon expire. Please check the validity of your licenses."
+            "value" : "You will soon lose access to your prepaid services. "
+          }
+        }
+      }
+    },
+    "credit_card" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Credit Card"
           }
         }
       }
@@ -96,6 +181,16 @@
         }
       }
     },
+    "description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        }
+      }
+    },
     "disconnected" : {
       "localizations" : {
         "en" : {
@@ -116,12 +211,85 @@
         }
       }
     },
+    "end_of_validity" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "End of Validity"
+          }
+        }
+      }
+    },
     "enyaq" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enyaq"
+          }
+        }
+      }
+    },
+    "general_information" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General Information"
+          }
+        }
+      }
+    },
+    "google_pay" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Google Pay"
+          }
+        }
+      }
+    },
+    "inactive" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inactive"
+          }
+        }
+      }
+    },
+    "infotainment_online" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Infotainment Online"
+          }
+        }
+      }
+    },
+    "intelligent_speed_assist" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intelligent Speed Assist"
+          }
+        }
+      }
+    },
+    "Key" : {
+      "extractionState" : "manual"
+    },
+    "media_streaming" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Media Streaming"
           }
         }
       }
@@ -139,6 +307,59 @@
     "OK" : {
 
     },
+    "order" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Order"
+          }
+        }
+      }
+    },
+    "period" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Period"
+          }
+        }
+      }
+    },
+    "Prepaid Services" : {
+
+    },
+    "price" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Price"
+          }
+        }
+      }
+    },
+    "price_with_vat" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Price with VAT"
+          }
+        }
+      }
+    },
+    "purchase_summary" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purchase Summary"
+          }
+        }
+      }
+    },
     "range" : {
       "localizations" : {
         "en" : {
@@ -149,18 +370,55 @@
         }
       }
     },
+    "refresh" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refresh"
+          }
+        }
+      }
+    },
+    "remote_access" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remote Access"
+          }
+        }
+      }
+    },
+    "service" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Service"
+          }
+        }
+      }
+    },
+    "service_expires_soon" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Will soon expire"
+          }
+        }
+      }
+    },
     "subscriptions" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Subscriptions"
+            "value" : "Services"
           }
         }
       }
-    },
-    "Subscriptions" : {
-
     },
     "temperature" : {
       "localizations" : {
@@ -172,8 +430,74 @@
         }
       }
     },
-    "Test" : {
+    "This button will refresh all the data and behaviour. \n\nTo use Connect LITE app, you need a DataPlug adapter. You can buy it at your ŠKODA dealer and insert into diagnostic board inside your vehicle." : {
 
+    },
+    "Time Savings" : {
+
+    },
+    "total_price" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total Price"
+          }
+        }
+      }
+    },
+    "Total: 240 h / 2024" : {
+
+    },
+    "traffication" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traffication"
+          }
+        }
+      }
+    },
+    "transaction_fee_excluding_vat" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transaction fee excl. VAT"
+          }
+        }
+      }
+    },
+    "transaction_fee_including_vat" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transaction fee incl. VAT"
+          }
+        }
+      }
+    },
+    "travel_assist" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Travel Assist"
+          }
+        }
+      }
+    },
+    "validity" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Validity"
+          }
+        }
+      }
     },
     "vehicle" : {
       "localizations" : {
@@ -181,6 +505,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vehicle"
+          }
+        }
+      }
+    },
+    "vehicles" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vehicles"
           }
         }
       }
@@ -201,6 +535,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Windows closed"
+          }
+        }
+      }
+    },
+    "your_personal_data" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your Personal Data"
           }
         }
       }

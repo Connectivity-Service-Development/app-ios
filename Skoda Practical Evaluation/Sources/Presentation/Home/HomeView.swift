@@ -7,6 +7,23 @@
 
 import SwiftUI
 
+enum HomeViewNavigation: Hashable, Equatable {
+    case prepaidServices
+    
+    static func == (lhs: HomeViewNavigation, rhs: HomeViewNavigation) -> Bool {
+        switch (lhs, rhs) {
+        case (.prepaidServices, .prepaidServices):
+            return true
+        }
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        switch self {
+        case .prepaidServices:
+            hasher.combine("prepaidServices")
+        }
+    }
+}
 
 struct HomeView: View {
     
@@ -18,12 +35,13 @@ struct HomeView: View {
     // MARK: - State
     
     @StateObject private var viewModel = ViewModel()
+    @State private var path = NavigationPath()
     
     
     // MARK: - Body
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             LoadableView(
                 isLoading: .constant(false),
                 error: .constant(nil)
@@ -34,7 +52,10 @@ struct HomeView: View {
                         
                         if viewModel.hasServiceExpiringInLessThanAMonth, !viewModel.hideExpirationReminderBanner {
                             PrepaidServicesExpirationReminderView(
-                                hideExpirationReminderBanner: $viewModel.hideExpirationReminderBanner
+                                hideExpirationReminderBanner: $viewModel.hideExpirationReminderBanner,
+                                myPrepaidServices: $viewModel.myPrepaidServices,
+                                allPrepaidServices: $viewModel.prepaidServices,
+                                path: $path
                             )
                             .padding(.top, 8)
                         }
@@ -54,9 +75,13 @@ struct HomeView: View {
                 }
                 .task {
                     await viewModel.fetchMyPrepaidServices()
+                    await viewModel.fetchAllPrepaidServices()
                 }
                 .padding(.bottom, 64)
                 .background(Color.skodaBackground)
+            }
+            .navigationDestination(for: HomeViewNavigation.self) { navigation in
+                PrepaidServicesView(path: $path)
             }
         }
         .overlay(
@@ -119,8 +144,13 @@ struct HomeView: View {
     }
     
     var subscriptionCard: some View {
-        NavigationLink {
-            SubscriptionsView()
+//        NavigationLink {
+//            PrepaidServicesView(path: $path)
+//        } label: {
+//
+//        }
+        Button {
+            path.append(HomeViewNavigation.prepaidServices)
         } label: {
             VehicleInfoCard(
                 title: "subscriptions",
@@ -132,7 +162,7 @@ struct HomeView: View {
                             .frame(width: 32, height: 32)
                     )
                 },
-                value: "\(viewModel.prepaidServicesCount) of TBD active",
+                value: "\(viewModel.myPrepaidServicesCount) of \(viewModel.allPrepareidServicesCount) active",
                 bottomContent: viewModel.serviceExpiringInLessThanAMonthCount > 0 ? {
                     AnyView(
                         HStack(alignment: .center) {

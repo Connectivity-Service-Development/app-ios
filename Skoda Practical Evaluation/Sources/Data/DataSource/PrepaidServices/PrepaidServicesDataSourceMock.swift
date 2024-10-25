@@ -15,19 +15,19 @@ class PrepaidServicesDataSourceMock: PrepaidServicesDataSource {
         
         let dtos = [
             UserPrepaidServiceDTO(
-                id: 1,
+                prepaidServiceId: "1",
                 serviceName: "Service 1",
                 expirationDate: "2022-11-22T12:49:02.932423",
                 expired: true
             ),
             UserPrepaidServiceDTO(
-                id: 2,
+                prepaidServiceId: "2",
                 serviceName: "Service 2",
                 expirationDate: "2022-11-22T12:49:02.932423",
                 expired: true
             ),
             UserPrepaidServiceDTO(
-                id: 3,
+                prepaidServiceId: "3",
                 serviceName: "Service 3",
                 expirationDate: "2022-11-22T12:49:02.932423",
                 expired: true
@@ -35,5 +35,25 @@ class PrepaidServicesDataSourceMock: PrepaidServicesDataSource {
         ]
         
         return try dtos.map { try $0.toEntity() }
+    }
+    
+    func getAllPrepaidServices() async throws -> [PrepaidService] {
+        try await Task.sleep(for: .seconds(1))
+        
+        let dtos = [
+            PrepaidServiceDTO(
+                id: "1",
+                serviceName: "Service 1",
+                description: "Description 1",
+                bulletPoints: ["Point 1", "Point 2", "Point 3"],
+                price: 100
+            )
+        ]
+        
+        return try dtos.map { try $0.toEntity() }
+    }
+    
+    func orderPrepaidService(id: String) async throws {
+        try await Task.sleep(for: .seconds(1))
     }
 }

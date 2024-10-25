@@ -18,5 +18,9 @@ class RemoteDataSourceAssembly: Assembly {
         container.register(PrepaidServicesDataSource.self) { _ in
             PrepaidServicesDataSourceRemote()
         }
+        
+        container.register(TechnicalDataSource.self) { _ in
+            TechnicalDataSourceRemote()
+        }
     }
 }
