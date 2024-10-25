@@ -97,6 +97,7 @@
 
     },
     "common_error" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

@@ -11,10 +11,6 @@ import Swinject
 class RemoteDataSourceAssembly: Assembly {
     
     func assemble(container: Container) {
-        container.register(DummyDataSource.self) { _ in
-            DummyDataSourceRemote()
-        }
-        
         container.register(PrepaidServicesDataSource.self) { _ in
             PrepaidServicesDataSourceRemote()
         }

@@ -11,10 +11,6 @@ import Swinject
 class MockDataSourceAssembly: Assembly {
     
     func assemble(container: Container) {
-        container.register(DummyDataSource.self) { _ in
-            DummyDataSourceMock()
-        }
-        
         container.register(PrepaidServicesDataSource.self) { _ in
             PrepaidServicesDataSourceMock()
         }
