@@ -16,4 +16,4 @@ There is only one dependency: **swinject**
 
 
 ### Components diagram
-![Untitled Diagram](https://github.com/user-attachments/assets/1b913f69-fe39-4d5f-93d9-8b64a5af0345)
+![Untitled Diagram](https://github.com/user-attachments/assets/2ae04e6d-7429-4828-81cc-4f96aa4147ba)
