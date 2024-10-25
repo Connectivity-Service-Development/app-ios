@@ -217,11 +217,12 @@ struct PrepaidServiceDetailView: View {
                     .frame(height: 116)
                     .overlay(
                         VStack(alignment: .center, spacing: 16) {
-                            NavigationLink {
-                                PrepaidServicePaymentView(
-                                    path: $path,
-                                    prepaidService: prepaidService,
-                                    expirationDate: (expirationDate ?? Date()) > Date() ? expirationDate : nil
+                            Button {
+                                path.append(
+                                    HomeViewNavigation.prepaidServicePayment(
+                                        prepaidService,
+                                        (expirationDate ?? Date()) > Date() ? expirationDate : nil
+                                    )
                                 )
                             } label: {
                                 Capsule()

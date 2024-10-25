@@ -9,10 +9,21 @@ import SwiftUI
 
 enum HomeViewNavigation: Hashable, Equatable {
     case prepaidServices
+    case prepaidServiceDetail(PrepaidService, Bool, Date?, Date?)
+    case prepaidServicePayment(PrepaidService, Date?)
+    case prepaidServicePaymentSuccess
     
     static func == (lhs: HomeViewNavigation, rhs: HomeViewNavigation) -> Bool {
         switch (lhs, rhs) {
         case (.prepaidServices, .prepaidServices):
+            return true
+        case (.prepaidServiceDetail, .prepaidServiceDetail):
+            return true
+        case (.prepaidServicePayment, .prepaidServicePayment):
+            return true
+        case (.prepaidServicePaymentSuccess, .prepaidServicePaymentSuccess):
+            return true
+        default:
             return true
         }
     }
@@ -21,6 +32,12 @@ enum HomeViewNavigation: Hashable, Equatable {
         switch self {
         case .prepaidServices:
             hasher.combine("prepaidServices")
+        case .prepaidServiceDetail:
+            hasher.combine("prepaidServiceDetail")
+        case .prepaidServicePayment:
+            hasher.combine("prepaidServicePayment")
+        case .prepaidServicePaymentSuccess:
+            hasher.combine("prepaidServicePaymentSuccess")
         }
     }
 }
@@ -81,10 +98,26 @@ struct HomeView: View {
                 .background(Color.skodaBackground)
             }
             .navigationDestination(for: HomeViewNavigation.self) { navigation in
-                PrepaidServicesView(path: $path)
-            }
-            .navigationDestination(for: Bool.self) { _ in
-                PrepaidServicePaymentSuccessView(path: $path)
+                switch navigation {
+                case .prepaidServices:
+                    PrepaidServicesView(path: $path)
+                case .prepaidServiceDetail(let prepaidService, let hasUserActiveSubscription, let expirationDate, let nearingExpirationDate):
+                    PrepaidServiceDetailView(
+                        path: $path,
+                        prepaidService: prepaidService,
+                        hasUserActiveSubscription: hasUserActiveSubscription,
+                        expirationDate: expirationDate,
+                        nearingExpirationDate: nearingExpirationDate
+                    )
+                case .prepaidServicePayment(let prepaidService, let expirationDate):
+                    PrepaidServicePaymentView(
+                        path: $path,
+                        prepaidService: prepaidService,
+                        expirationDate: expirationDate
+                    )
+                case .prepaidServicePaymentSuccess:
+                    PrepaidServicePaymentSuccessView(path: $path)
+                }
             }
         }
         .overlay(
@@ -147,11 +180,6 @@ struct HomeView: View {
     }
     
     var subscriptionCard: some View {
-//        NavigationLink {
-//            PrepaidServicesView(path: $path)
-//        } label: {
-//
-//        }
         Button {
             path.append(HomeViewNavigation.prepaidServices)
         } label: {

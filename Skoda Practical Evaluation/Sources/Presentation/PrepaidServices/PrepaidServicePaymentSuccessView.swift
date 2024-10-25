@@ -65,7 +65,7 @@ struct PrepaidServicePaymentSuccessView: View {
                         textColor: .white,
                         borderColor: .skodaSeparator
                     ) {
-                        path.removeLast()
+                        path.removeLast(3)
                     }
                     
                     Spacer()
