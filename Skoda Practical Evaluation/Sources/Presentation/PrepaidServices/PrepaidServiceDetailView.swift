@@ -72,14 +72,79 @@ struct PrepaidServiceDetailView: View {
                         .foregroundStyle(Color.skodaSwitchThumb)
                     
                     VStack(alignment: .leading) {
-                        VStack(alignment: .leading) {
-                            Text("Time Savings")
-                                .font(.bold(size: 16))
-                                .foregroundStyle(.white)
+                        HStack(alignment: .center) {
+                            VStack(alignment: .leading) {
+                                Text("Time Saving")
+                                    .font(.bold(size: 16))
+                                    .foregroundStyle(.white)
+                                
+                                Text("Total: 240 h / 2024")
+                                    .font(.regular(size: 12))
+                                    .foregroundStyle(Color.skodaGrayText)
+                            }
                             
-                            Text("Total: 240 h / 2024")
-                                .font(.regular(size: 12))
-                                .foregroundStyle(Color.skodaGrayText)
+                            Spacer()
+                            
+                            Text("58 h")
+                                .font(.regular(size: 14))
+                                .foregroundStyle(Color.skodaGreen)
+                            + Text(" / 10/2024")
+                                .font(.regular(size: 14))
+                                .foregroundStyle(Color.white)
+                        }
+                        .padding(.bottom, 8)
+                        
+                        Color.skodaSeparator
+                            .frame(height: 1)
+                            .clipShape(RoundedRectangle(cornerRadius: 1, style: .circular))
+                            .padding(.bottom, 19)
+                        
+                        HStack(alignment: .center) {
+                            VStack(alignment: .leading) {
+                                Text("Fuel Saving")
+                                    .font(.bold(size: 16))
+                                    .foregroundStyle(.white)
+                                
+                                Text("Total: 159 l / 2024")
+                                    .font(.regular(size: 12))
+                                    .foregroundStyle(Color.skodaGrayText)
+                            }
+                            
+                            Spacer()
+                            
+                            Text("72 l")
+                                .font(.regular(size: 14))
+                                .foregroundStyle(Color.skodaGreen)
+                            + Text(" / 10/2024")
+                                .font(.regular(size: 14))
+                                .foregroundStyle(Color.white)
+                        }
+                        .padding(.bottom, 8)
+                        
+                        Color.skodaSeparator
+                            .frame(height: 1)
+                            .clipShape(RoundedRectangle(cornerRadius: 1, style: .circular))
+                            .padding(.bottom, 19)
+                        
+                        HStack(alignment: .center) {
+                            VStack(alignment: .leading) {
+                                Text("Emissions Reduction")
+                                    .font(.bold(size: 16))
+                                    .foregroundStyle(.white)
+                                
+                                Text("Total: 180 kg CO₂ / 2024")
+                                    .font(.regular(size: 12))
+                                    .foregroundStyle(Color.skodaGrayText)
+                            }
+                            
+                            Spacer()
+                            
+                            Text("50 kg CO₂")
+                                .font(.regular(size: 14))
+                                .foregroundStyle(Color.skodaGreen)
+                            + Text(" / 10/2024")
+                                .font(.regular(size: 14))
+                                .foregroundStyle(Color.white)
                         }
                         .padding(.bottom, 8)
                         

@@ -83,6 +83,9 @@ struct HomeView: View {
             .navigationDestination(for: HomeViewNavigation.self) { navigation in
                 PrepaidServicesView(path: $path)
             }
+            .navigationDestination(for: Bool.self) { _ in
+                PrepaidServicePaymentSuccessView(path: $path)
+            }
         }
         .overlay(
             VStack {

@@ -230,7 +230,7 @@ struct PrepaidServicePaymentView: View {
                                     await viewModel.orderService(id: prepaidService.id)
                                     
                                     await MainActor.run {
-                                        path.removeLast()
+                                        path.append(true)
                                     }
                                 }
                             }
@@ -247,7 +247,7 @@ struct PrepaidServicePaymentView: View {
                                     await viewModel.orderService(id: prepaidService.id)
                                     
                                     await MainActor.run {
-                                        path.removeLast()
+                                        path.append(true)
                                     }
                                 }
                             }
@@ -264,7 +264,7 @@ struct PrepaidServicePaymentView: View {
                                     await viewModel.orderService(id: prepaidService.id)
                                     
                                     await MainActor.run {
-                                        path.removeLast()
+                                        path.append(true)
                                     }
                                 }
                             }

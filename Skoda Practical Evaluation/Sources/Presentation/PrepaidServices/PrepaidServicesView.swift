@@ -34,6 +34,46 @@ struct PrepaidServicesView: View {
         ) {
             ScrollView {
                 VStack(spacing: 0) {
+                    NavigationLink {
+                        LoadableView(
+                            isLoading: .constant(false),
+                            error: .constant(nil)
+                        ) {
+                            ScrollView {
+                                
+                            }
+                            .padding(.bottom, 64)
+                            .background(Color.skodaBackground)
+                        }
+                        .toolbar {
+                            ToolbarItem(placement: .principal) {
+                                Text("Miroslav Udatný")
+                                    .font(.bold(size: 20))
+                                    .foregroundColor(.white)
+                            }
+                        }
+                    } label: {
+                        HStack(alignment: .center) {
+                            HStack(alignment: .center, spacing: 8) {
+                                Image("avatar")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 40, height: 40)
+                                
+                                Text("Miroslav Udatný")
+                                    .font(.bold(size: 16))
+                                    .foregroundStyle(.white)
+                            }
+                            
+                            Spacer()
+                            
+                            Image("chevronLeft")
+                                .scaleEffect(x: -1, y: 1)
+                        }
+                        .padding(.top, 8)
+                        .padding(.horizontal, 16)
+                    }
+                    
                     HStack(alignment: .center, spacing: 0) {
                         VStack {
                             Text("enyaq")
@@ -56,7 +96,7 @@ struct PrepaidServicesView: View {
                     }
                     .background(Color.skodaLightGray)
                     .clipShape(RoundedRectangle(cornerRadius: 4, style: .circular))
-                    .padding(.top, 8)
+                    .padding(.top, 26)
                     .padding(.horizontal, 16)
                     .padding(.bottom, 37)
                     
