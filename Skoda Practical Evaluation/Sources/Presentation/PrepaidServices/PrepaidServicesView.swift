@@ -153,17 +153,6 @@ struct PrepaidServicesView: View {
                             }
                             .padding(.horizontal, 16)
                         }
-//                        NavigationLink {
-//                            PrepaidServiceDetailView(
-//                                path: $path,
-//                                prepaidService: service,
-//                                hasUserActiveSubscription: viewModel.hasUserActiveSubscription(for: service),
-//                                expirationDate: (viewModel.myPrepaidServices ?? []).first(where: { $0.id == service.id })?.expirationDate,
-//                                nearingExpirationDate: viewModel.expirationDateIfNearingExpiration(for: service)
-//                            )
-//                        } label: {
-//
-//                        }
                     }
                     
                     Spacer()
