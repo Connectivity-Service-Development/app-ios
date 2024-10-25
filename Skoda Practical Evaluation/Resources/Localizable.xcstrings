@@ -447,6 +447,16 @@
         }
       }
     },
+    "service_expires_at" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expires"
+          }
+        }
+      }
+    },
     "service_expires_soon" : {
       "localizations" : {
         "en" : {

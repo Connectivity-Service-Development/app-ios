@@ -55,6 +55,13 @@ struct PrepaidServiceDetailView: View {
                                     + Text(" \(nearingExpirationDate.formatted(.dateTime.day().month().year()))")
                                         .font(.regular(size: 12))
                                         .foregroundStyle(Color.skodaOrange)
+                                } else if hasUserActiveSubscription, let expirationDate {
+                                    Text("service_expires_at")
+                                        .font(.regular(size: 12))
+                                        .foregroundStyle(Color.skodaGrayText)
+                                    + Text(" \(expirationDate.formatted(.dateTime.day().month().year()))")
+                                        .font(.regular(size: 12))
+                                        .foregroundStyle(Color.skodaGrayText)
                                 }
                             }
                         }
